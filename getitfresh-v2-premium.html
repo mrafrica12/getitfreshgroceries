@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Get It Fresh Groceries — Dar es Salaam's premium fresh grocery delivery. Farm-sourced fruits, vegetables, meats, spices and household essentials delivered same day.">
+<meta name="theme-color" content="#0d3d1a">
+<title>GET IT FRESH GROCERIES | Dar es Salaam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════
+   DESIGN SYSTEM — GET IT FRESH GROCERIES V2
+   Brand: Premium Tanzanian Fresh Grocery Delivery
+   Palette: Forest Green + Gold + Cream + Ink
+═══════════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  /* Brand Greens — refined, rich, botanical */
+  --forest:   #0d3d1a;
+  --grove:    #145226;
+  --leaf:     #1a6b2a;
+  --fern:     #228136;
+  --sage:     #2e9e47;
+  --mint:     #45bc5f;
+  --mist:     #d6f4de;
+  --dew:      #edfaf1;
+  /* Gold Accent — warm, premium */
+  --gold-dk:  #8a5900;
+  --gold:     #c07d00;
+  --gold-md:  #f0a500;
+  --gold-lt:  #fde79a;
+  --gold-pale:#fffbeb;
+  /* Neutrals — editorial */
+  --ink:      #0a0f0c;
+  --charcoal: #1a2118;
+  --slate:    #2e3d30;
+  --stone:    #5a6e60;
+  --ash:      #8a9e8f;
+  --silver:   #b8ccbd;
+  --fog:      #dde8df;
+  --cloud:    #eef4ef;
+  --snow:     #f6faf7;
+  --white:    #ffffff;
+  /* Semantic */
+  --surface:  var(--white);
+  --bg:       var(--snow);
+  --border:   var(--fog);
+  --border-md:var(--silver);
+  /* Typography */
+  --display:  'Playfair Display', Georgia, serif;
+  --body:     'Outfit', system-ui, sans-serif;
+  /* Radii */
+  --r-xs: 4px; --r-sm: 8px; --r-md: 14px;
+  --r-lg: 20px; --r-xl: 28px; --r-pill: 999px;
+  /* Shadows */
+  --sh-xs: 0 1px 3px rgba(0,0,0,.06);
+  --sh-sm: 0 2px 8px rgba(0,0,0,.08);
+  --sh-md: 0 6px 24px rgba(0,0,0,.10);
+  --sh-lg: 0 16px 48px rgba(0,0,0,.14);
+  --sh-grn: 0 8px 32px rgba(13,61,26,.22);
+  --sh-gold: 0 8px 32px rgba(192,125,0,.30);
+  /* Spacing */
+  --space-xs: 4px; --space-sm: 8px; --space-md: 16px;
+  --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px;
+  --space-3xl: 96px;
+}
+html{ scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+body{
+  font-family: var(--body);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img{ display:block; max-width:100%; }
+button{ font-family: var(--body); cursor: pointer; }
+a{ text-decoration: none; color: inherit; }
+
+/* ═══ UTILITY ═══ */
+.container{ max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+.sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+/* ═══ TOPBAR ═══ */
+.topbar{
+  background: var(--forest);
+  padding: 8px 20px;
+  display: flex; flex-wrap: wrap; gap: 4px 16px;
+  justify-content: center; align-items: center;
+  font-size: 12px; font-weight: 500;
+  color: rgba(255,255,255,.65); letter-spacing: .01em;
+  position: relative; overflow: hidden;
+}
+.topbar::after{
+  content:''; position:absolute; left:0; right:0; bottom:0; height:1px;
+  background: linear-gradient(90deg,transparent,rgba(240,165,0,.4),transparent);
+}
+.topbar a{ color: var(--gold-lt); font-weight: 600; transition: color .15s; }
+.topbar a:hover{ color: #fff; }
+.topbar .sep{ opacity:.25; }
+
+/* ═══ HEADER ═══ */
+header{
+  background: rgba(255,255,255,.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 500;
+  transition: box-shadow .3s;
+}
+header.scrolled{ box-shadow: var(--sh-md); }
+.header-inner{
+  max-width: 1160px; margin: 0 auto; padding: 0 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 76px; gap: 20px;
+}
+.logo-link{
+  display: flex; align-items: center; gap: 14px;
+  flex-shrink: 0;
+}
+/* REDESIGNED SVG LOGO — inline, professional, scalable */
+.brand-mark{
+  width: 52px; height: 52px; flex-shrink: 0;
+}
+.wordmark{
+  display: flex; flex-direction: column;
+  line-height: 1; gap: 2px;
+}
+.wordmark-top{
+  font-family: var(--body);
+  font-size: 9px; font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+.wordmark-bot{
+  font-family: var(--display);
+  font-size: 20px; font-weight: 700;
+  color: var(--leaf);
+  letter-spacing: -.01em;
+  line-height: .95;
+}
+.header-nav{
+  display: flex; align-items: center; gap: 2px;
+  margin: 0 auto;
+}
+.nav-link{
+  font-size: 13.5px; font-weight: 500;
+  color: var(--slate); padding: 8px 14px;
+  border-radius: var(--r-pill);
+  transition: all .18s;
+}
+.nav-link:hover{ background: var(--dew); color: var(--leaf); }
+.header-actions{ display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.cart-btn{
+  display: flex; align-items: center; gap: 8px;
+  background: var(--leaf); color: #fff;
+  border: none; border-radius: var(--r-pill);
+  padding: 10px 20px;
+  font-family: var(--body); font-size: 13.5px; font-weight: 600;
+  box-shadow: var(--sh-grn); transition: all .2s;
+}
+.cart-btn:hover{ background: var(--fern); transform: translateY(-1px); box-shadow: 0 12px 36px rgba(13,61,26,.28); }
+.cart-badge{
+  background: var(--gold-md); color: var(--ink);
+  border-radius: 50%; width: 20px; height: 20px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 800; flex-shrink: 0;
+}
+@media(max-width:768px){
+  .header-nav{ display:none; }
+  .header-inner{ height:64px; }
+  .wordmark-bot{ font-size:17px; }
+}
+
+/* ═══ HERO ═══ */
+.hero{
+  position: relative; overflow: hidden;
+  background: var(--forest);
+  min-height: 92vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 0;
+}
+.hero::before{
+  content:'';
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 60% 80% at 0% 50%, rgba(45,158,71,.18) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 100% 20%, rgba(240,165,0,.12) 0%, transparent 55%),
+    linear-gradient(155deg, #071a0c 0%, #0d3d1a 40%, #145226 70%, #1a4d20 100%);
+  pointer-events: none;
+}
+.hero::after{
+  content:'';
+  position:absolute; inset:0;
+  background-image:
+    radial-gradient(circle 1px at 20% 30%, rgba(255,255,255,.06) 0%, transparent 0%),
+    radial-gradient(circle 1px at 80% 70%, rgba(255,255,255,.04) 0%, transparent 0%),
+    radial-gradient(circle 1px at 50% 10%, rgba(240,165,0,.08) 0%, transparent 0%);
+  pointer-events: none;
+}
+.hero-left{
+  position: relative; z-index: 2;
+  padding: 80px 60px 80px 80px;
+  display: flex; flex-direction: column;
+  gap: 28px;
+}
+.hero-eyebrow{
+  display: inline-flex; align-items: center; gap: 10px;
+  width: fit-content;
+}
+.hero-eyebrow-line{
+  width: 32px; height: 1px; background: var(--gold-md);
+}
+.hero-eyebrow-text{
+  font-family: var(--body);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--gold-md);
+}
+.hero-headline{
+  font-family: var(--display);
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -.025em;
+  color: #fff;
+}
+.hero-headline em{
+  font-style: italic;
+  color: var(--gold-lt);
+  display: block;
+}
+.hero-sub{
+  font-size: clamp(15px, 1.8vw, 17px);
+  color: rgba(255,255,255,.65);
+  line-height: 1.75;
+  max-width: 42ch;
+  font-weight: 300;
+}
+.hero-actions{
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  padding-top: 4px;
+}
+.btn-gold{
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gold-md); color: var(--ink);
+  border: none; border-radius: var(--r-pill);
+  padding: 14px 32px; font-family: var(--body);
+  font-size: 14px; font-weight: 700;
+  box-shadow: var(--sh-gold); transition: all .22s;
+  letter-spacing: .01em;
+}
+.btn-gold:hover{ background: #ffb61a; transform: translateY(-2px); box-shadow: 0 12px 40px rgba(192,125,0,.45); }
+.btn-ghost{
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: var(--r-pill);
+  padding: 13px 24px;
+  color: rgba(255,255,255,.85);
+  font-family: var(--body); font-size: 14px; font-weight: 500;
+  transition: all .2s;
+}
+.btn-ghost:hover{ background: rgba(255,255,255,.15); }
+.hero-chips{
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.hero-chip{
+  background: rgba(255,255,255,.09);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: var(--r-pill);
+  padding: 5px 14px;
+  font-size: 12px; font-weight: 500;
+  color: rgba(255,255,255,.8);
+  letter-spacing: .02em;
+}
+.hero-right{
+  position: relative; z-index: 2;
+  padding: 80px 80px 80px 40px;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.hero-stats{
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+}
+.stat-card{
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r-lg);
+  padding: 20px;
+  backdrop-filter: blur(8px);
+  transition: background .2s;
+}
+.stat-card:hover{ background: rgba(255,255,255,.11); }
+.stat-num{
+  font-family: var(--display);
+  font-size: 2rem; font-weight: 700;
+  color: #fff; line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-lbl{
+  font-size: 12px; color: rgba(255,255,255,.55);
+  line-height: 1.4; font-weight: 400;
+}
+.hero-promise{
+  background: rgba(240,165,0,.12);
+  border: 1px solid rgba(240,165,0,.25);
+  border-radius: var(--r-lg);
+  padding: 20px 22px;
+}
+.hero-promise-title{
+  font-family: var(--display);
+  font-size: 1.2rem; font-weight: 700;
+  color: #fff; margin-bottom: 8px;
+}
+.hero-promise p{
+  font-size: 13px; color: rgba(255,255,255,.6); line-height: 1.65;
+}
+@media(max-width:900px){
+  .hero{ grid-template-columns:1fr; min-height:auto; }
+  .hero-left{ padding:60px 24px 40px; }
+  .hero-right{ padding:20px 24px 60px; }
+  .hero-headline{ font-size:2.6rem; }
+}
+
+/* ═══ MARQUEE STRIP ═══ */
+.marquee-strip{
+  background: var(--charcoal);
+  padding: 12px 0; overflow: hidden;
+  border-top: 1px solid rgba(240,165,0,.15);
+  border-bottom: 1px solid rgba(240,165,0,.15);
+}
+.marquee-track{
+  display: flex; gap: 0; white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+.marquee-item{
+  display: inline-flex; align-items: center; gap: 14px;
+  padding: 0 28px;
+  font-family: var(--body); font-size: 11.5px;
+  font-weight: 600; letter-spacing: .16em;
+  text-transform: uppercase; color: rgba(255,255,255,.4);
+}
+.marquee-dot{ width:4px; height:4px; border-radius:50%; background:var(--gold-md); flex-shrink:0; }
+@keyframes marquee{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ═══ TRUST BAR ═══ */
+.trust-bar{
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 20px;
+}
+.trust-inner{
+  max-width:1160px; margin:0 auto;
+  display:flex; align-items:center; justify-content:center;
+  gap:40px; flex-wrap:wrap;
+}
+.trust-item{
+  display:flex; align-items:center; gap:10px;
+  font-size:13px; font-weight:500; color:var(--slate);
+}
+.trust-icon{
+  width:38px; height:38px; border-radius:50%;
+  background:var(--dew); border:1.5px solid var(--mist);
+  display:flex; align-items:center; justify-content:center;
+  font-size:18px; flex-shrink:0;
+}
+.trust-item strong{ display:block; font-size:13.5px; font-weight:700; color:var(--ink); }
+.trust-item span{ font-size:11px; color:var(--ash); }
+
+/* ═══ SECTION ANATOMY ═══ */
+.section-label{
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:var(--body); font-size:11px; font-weight:700;
+  letter-spacing:.18em; text-transform:uppercase; color:var(--sage);
+  margin-bottom:16px;
+}
+.section-label::before{ content:''; display:block; width:24px; height:1px; background:var(--sage); }
+.section-title{
+  font-family: var(--display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: -.025em;
+  line-height: 1.05;
+  color: var(--ink);
+}
+.section-title em{ font-style:italic; color:var(--leaf); }
+.section-sub{
+  font-size:16.5px; color:var(--stone); line-height:1.75;
+  font-weight:300; max-width:52ch; margin-top:14px;
+}
+
+/* ═══ SEARCH ═══ */
+.search-section{
+  max-width:700px; margin:0 auto; padding:32px 20px 0;
+}
+.search-wrap{
+  position:relative; background:var(--white);
+  border-radius:var(--r-pill);
+  border:2px solid var(--border-md);
+  box-shadow:var(--sh-sm);
+  display:flex; align-items:center; overflow:hidden;
+  transition:border-color .2s,box-shadow .2s;
+}
+.search-wrap:focus-within{
+  border-color:var(--sage);
+  box-shadow: 0 0 0 4px rgba(46,158,71,.12), var(--sh-sm);
+}
+.search-icon{ padding:0 16px 0 20px; color:var(--ash); flex-shrink:0; }
+.search-icon svg{ width:18px;height:18px; }
+.search-wrap input{
+  flex:1; border:none; outline:none; background:transparent;
+  padding:16px 12px 16px 0;
+  font-family:var(--body); font-size:15px; color:var(--ink);
+}
+.search-wrap input::placeholder{ color:var(--silver); }
+.search-clear{
+  padding:0 18px; color:var(--silver); background:none; border:none;
+  font-size:18px; cursor:pointer; display:none;
+}
+.search-clear.vis{ display:block; }
+
+/* ═══ CATEGORY PILLS ═══ */
+.cat-section{ padding:20px 0 0; }
+.cat-scroll{ overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 20px; }
+.cat-scroll::-webkit-scrollbar{ display:none; }
+.cat-pills{ display:flex;gap:8px;min-width:max-content;max-width:1160px;margin:0 auto; }
+.cat-pill{
+  display:flex;align-items:center;gap:7px;
+  background:var(--white); border:1.5px solid var(--border-md);
+  border-radius:var(--r-pill);
+  padding:9px 18px;
+  font-family:var(--body);font-size:13px;font-weight:600;
+  color:var(--slate);white-space:nowrap;
+  transition:all .18s; cursor:pointer;
+}
+.cat-pill:hover{ border-color:var(--sage);color:var(--leaf);background:var(--dew); }
+.cat-pill.active{ background:var(--leaf);color:#fff;border-color:var(--leaf);box-shadow:var(--sh-grn); }
+.cat-pill .cat-emoji{ font-size:14px; }
+
+/* ═══ PRODUCTS GRID ═══ */
+.main-section{ max-width:1160px;margin:0 auto;padding:24px 20px 80px; }
+.sec-header{ display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;gap:12px;flex-wrap:wrap; }
+.sec-title-bar{ font-family:var(--display);font-size:1.75rem;color:var(--leaf);display:flex;align-items:center;gap:12px; }
+.sec-title-bar::after{ content:'';flex:0 0 4px;width:32px;height:4px;background:var(--gold-md);border-radius:2px; }
+.sec-meta{ font-size:13px;color:var(--ash);font-weight:500; }
+.sortbar{ display:flex;align-items:center;gap:10px;flex-wrap:wrap; }
+.sort-select{ border:1.5px solid var(--border-md);background:var(--white);border-radius:var(--r-pill);padding:9px 16px;font-family:var(--body);font-size:13px;font-weight:600;color:var(--slate);outline:none;cursor:pointer; }
+.sort-select:focus{ border-color:var(--sage); }
+.product-grid{ display:grid;grid-template-columns:repeat(auto-fill,minmax(182px,1fr));gap:16px; }
+@media(max-width:420px){ .product-grid{grid-template-columns:repeat(2,1fr);gap:10px;} }
+@media(min-width:1024px){ .product-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));} }
+
+/* ═══ PRODUCT CARD — Premium Redesign ═══ */
+.p-card{
+  background:var(--white);
+  border-radius:var(--r-xl);
+  border:1.5px solid var(--border);
+  padding:0; overflow:hidden;
+  display:flex; flex-direction:column;
+  transition:box-shadow .25s, border-color .25s, transform .25s;
+  position:relative;
+}
+.p-card::before{
+  content:'';
+  position:absolute; bottom:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg,var(--leaf),var(--sage));
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .3s ease; border-radius:0 0 var(--r-xl) var(--r-xl);
+}
+.p-card:hover{
+  box-shadow:var(--sh-lg);
+  border-color:var(--mist);
+  transform:translateY(-4px);
+}
+.p-card:hover::before{ transform:scaleX(1); }
+.p-card.in-cart{
+  border-color:var(--mint);
+  box-shadow:0 0 0 2.5px rgba(69,188,95,.2), var(--sh-sm);
+}
+.p-zone{
+  width:100%; aspect-ratio:4/3;
+  background:linear-gradient(145deg,var(--dew) 0%,#fffbee 100%);
+  display:flex;align-items:center;justify-content:center;
+  font-size:54px; position:relative; flex-shrink:0;
+  border-bottom:1px solid var(--border);
+  transition:background .25s;
+}
+.p-card:hover .p-zone{ background:linear-gradient(145deg,#dff5e8 0%,#fff5d0 100%); }
+.p-in-badge{
+  position:absolute;top:10px;right:10px;
+  background:var(--leaf);color:#fff;
+  border-radius:var(--r-pill);font-size:9.5px;font-weight:800;
+  padding:3px 9px;letter-spacing:.06em;
+  opacity:0;transform:scale(.75);transition:all .2s;pointer-events:none;
+}
+.p-card.in-cart .p-in-badge{opacity:1;transform:scale(1);}
+.p-body{ padding:14px 14px 14px;display:flex;flex-direction:column;gap:8px;flex:1; }
+.p-meta{ display:flex;align-items:center;justify-content:space-between;gap:6px; }
+.p-cat-tag{
+  font-size:9.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--leaf);background:var(--dew);border:1px solid var(--mist);
+  padding:3px 8px;border-radius:var(--r-pill);
+}
+.p-name{ font-size:13.5px;font-weight:700;color:var(--ink);line-height:1.3;min-height:36px; }
+.p-price-row{ display:flex;align-items:baseline;gap:7px;flex-wrap:wrap; }
+.p-price{ font-size:15px;font-weight:800;color:var(--leaf); }
+.p-unit{ font-size:10.5px;color:var(--ash);font-weight:600;background:var(--cloud);border-radius:4px;padding:1px 7px; }
+.p-actions{ display:flex;align-items:center;gap:8px;margin-top:2px; }
+.qty-row{
+  display:flex;align-items:center;gap:5px;
+  background:var(--cloud);border-radius:var(--r-pill);padding:3px 6px;
+}
+.q-btn{
+  width:26px;height:26px;border-radius:50%;flex-shrink:0;
+  border:none;background:transparent;color:var(--slate);
+  font-size:16px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .15s;touch-action:manipulation;
+}
+.q-btn:hover,.q-btn:active{background:var(--leaf);color:#fff;}
+.q-num{ font-size:14px;font-weight:800;min-width:20px;text-align:center;color:var(--ink); }
+.add-btn{
+  flex:1;background:var(--leaf);color:#fff;border:none;
+  border-radius:var(--r-pill);padding:9px 0;
+  font-family:var(--body);font-size:13px;font-weight:700;
+  white-space:nowrap;transition:all .2s;touch-action:manipulation;
+}
+.add-btn:hover{background:var(--fern);transform:translateY(-1px);}
+.add-btn.done{background:var(--gold-md);color:var(--ink);}
+
+/* ═══ CUSTOM CARD ═══ */
+.custom-card{
+  border-style:dashed;border-color:var(--border-md);
+  background:linear-gradient(180deg,var(--snow),var(--white));
+}
+.ci-form-area{ padding:0 14px 14px; }
+.ci-form-area input{
+  width:100%;border:1.5px solid var(--border-md);border-radius:var(--r-md);
+  padding:9px 12px;font-family:var(--body);font-size:13px;
+  color:var(--ink);background:var(--white);outline:none;
+  transition:border-color .2s;margin-bottom:8px;
+}
+.ci-form-area input:focus{border-color:var(--sage);}
+.ci-add-btn{
+  background:var(--leaf);color:#fff;border:none;
+  border-radius:var(--r-md);padding:9px 0;width:100%;
+  font-family:var(--body);font-size:13px;font-weight:700;
+  transition:background .18s;cursor:pointer;
+}
+.ci-add-btn:hover{background:var(--fern);}
+
+/* ═══ NO RESULTS ═══ */
+.no-results{ grid-column:1/-1;text-align:center;padding:64px 20px; }
+.no-results .nr-icon{font-size:3.5rem;opacity:.3;margin-bottom:16px;}
+.no-results h3{font-family:var(--display);font-size:1.3rem;color:var(--ash);margin-bottom:8px;}
+.no-results p{font-size:14px;color:var(--silver);}
+
+/* ═══ REVIEWS ═══ */
+#reviews-section{
+  max-width:1160px;margin:0 auto 60px;
+  padding:32px;background:var(--white);
+  border:1px solid var(--border);border-radius:var(--r-xl);
+  box-shadow:var(--sh-md);
+}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px;}
+@media(max-width:860px){.reviews-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.reviews-grid{grid-template-columns:1fr;}}
+.review-card{
+  background:linear-gradient(160deg,var(--snow),var(--white));
+  border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:20px;display:flex;flex-direction:column;gap:10px;
+  transition:box-shadow .2s,transform .2s;
+}
+.review-card:hover{box-shadow:var(--sh-md);transform:translateY(-2px);}
+.review-stars{color:var(--gold-md);font-size:15px;letter-spacing:2px;}
+.review-text{font-size:13.5px;color:var(--slate);line-height:1.75;font-style:italic;flex:1;}
+.review-author{
+  display:flex;align-items:center;gap:10px;
+  border-top:1px solid var(--border);padding-top:12px;
+}
+.review-avatar{
+  width:38px;height:38px;border-radius:50%;
+  background:linear-gradient(135deg,var(--fern),var(--mint));
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;flex-shrink:0;color:#fff;font-weight:700;
+}
+.review-name{font-size:13px;font-weight:700;color:var(--ink);}
+.review-loc{font-size:11.5px;color:var(--ash);}
+.reviews-summary{
+  display:flex;align-items:center;gap:16px;margin-top:24px;
+  background:var(--dew);border:1px solid var(--mist);
+  border-radius:var(--r-lg);padding:18px 22px;
+}
+.rs-score{font-family:var(--display);font-size:3rem;color:var(--leaf);line-height:1;}
+.rs-info strong{display:block;font-size:14px;color:var(--ink);margin-bottom:4px;}
+.rs-info span{font-size:13px;color:var(--stone);}
+
+/* ═══ HOW IT WORKS ═══ */
+.how-section{
+  max-width:1160px;margin:0 auto 60px;padding:32px;
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--r-xl);box-shadow:var(--sh-md);
+}
+.how-section h2{font-family:var(--display);font-size:1.9rem;color:var(--ink);margin-bottom:10px;}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px;}
+@media(max-width:680px){.steps-grid{grid-template-columns:1fr;}}
+.step-card{
+  border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:20px;background:linear-gradient(180deg,var(--white),var(--snow));
+  position:relative;
+}
+.step-no{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:36px;height:36px;border-radius:50%;
+  background:var(--leaf);color:#fff;font-weight:800;font-size:13px;
+  margin-bottom:14px;box-shadow:var(--sh-grn);
+}
+.step-card h3{font-size:15.5px;margin-bottom:8px;color:var(--ink);font-weight:700;}
+.step-card p{font-size:13px;color:var(--stone);line-height:1.65;}
+
+/* ═══ WHY US ═══ */
+.why-section{
+  background:linear-gradient(180deg,var(--forest),#071a0c);
+  padding:64px 20px;
+}
+.why-inner{max-width:1160px;margin:0 auto;}
+.why-label{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:10px;}
+.why-title{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;margin-bottom:28px;line-height:1.1;}
+.why-title em{font-style:italic;color:var(--gold-lt);}
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+@media(max-width:860px){.feat-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.feat-grid{grid-template-columns:1fr;}}
+.feat-card{
+  border:1px solid rgba(255,255,255,.1);border-radius:var(--r-xl);
+  padding:24px;background:rgba(255,255,255,.05);
+  transition:background .2s;
+}
+.feat-card:hover{background:rgba(255,255,255,.09);}
+.feat-num{font-size:11px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.25);margin-bottom:12px;}
+.feat-icon{font-size:30px;margin-bottom:12px;}
+.feat-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:8px;}
+.feat-desc{font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;}
+
+/* ═══ FOOTER ═══ */
+footer{background:linear-gradient(180deg,#0a1a0d,#071209);padding:56px 20px 32px;}
+.footer-inner{max-width:1160px;margin:0 auto;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.07);}
+@media(max-width:760px){.footer-grid{grid-template-columns:1fr 1fr;gap:28px;}}
+@media(max-width:440px){.footer-grid{grid-template-columns:1fr;}}
+.footer-logo-row{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+.footer-logo-row img{height:50px;filter:brightness(1.05);}
+.footer-brand-name{font-family:var(--display);font-size:1.25rem;color:#fff;}
+.footer-desc{font-size:13px;line-height:1.7;color:rgba(255,255,255,.45);max-width:260px;}
+.footer-col h4{font-size:10.5px;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.14em;margin-bottom:16px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.footer-col li{font-size:13.5px;color:rgba(255,255,255,.55);}
+.footer-col a{color:var(--gold-lt);font-weight:600;transition:color .15s;}
+.footer-col a:hover{color:#fff;}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;color:rgba(255,255,255,.25);}
+
+/* ═══ CART OVERLAY ═══ */
+.overlay{
+  display:none;position:fixed;inset:0;
+  background:rgba(10,15,12,.6);z-index:800;
+  align-items:center;justify-content:center;padding:16px;
+  backdrop-filter:blur(4px);
+}
+.overlay.open{display:flex;}
+.cart-sheet{
+  background:var(--white);border-radius:28px;
+  width:min(1100px,100%);max-width:1100px;max-height:min(94vh,860px);
+  display:flex;flex-direction:column;overflow:hidden;
+  animation:scaleIn .2s ease;
+}
+@keyframes scaleIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+.sheet-head{
+  padding:20px 24px;background:rgba(255,255,255,.97);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;flex-shrink:0;
+}
+.sheet-kicker{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);display:block;margin-bottom:4px;}
+.sheet-title{font-family:var(--display);font-size:1.4rem;color:var(--ink);}
+.sheet-close{
+  background:none;border:1.5px solid var(--border-md);
+  border-radius:50%;width:36px;height:36px;
+  font-size:18px;color:var(--ash);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .18s;flex-shrink:0;
+}
+.sheet-close:hover{background:var(--cloud);color:var(--ink);}
+.checkout-layout{
+  display:grid;grid-template-columns:minmax(310px,1.05fr) minmax(340px,.95fr);
+  min-height:0;max-height:calc(min(94vh,860px) - 80px);
+}
+.cart-panel{
+  padding:20px;background:linear-gradient(180deg,#f7fcf8,#f0f8f2);
+  border-right:1px solid var(--border);overflow:auto;
+}
+.form-panel{ padding:20px;background:var(--white);overflow:auto; }
+.panel-top{ display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:16px; }
+.panel-kicker{ font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);display:block;margin-bottom:4px; }
+.panel-top h3{ font-family:var(--display);font-size:1.3rem;color:var(--ink); }
+.panel-badge{ background:var(--leaf);color:#fff;border-radius:var(--r-pill);padding:7px 14px;font-size:12px;font-weight:700; }
+.cart-empty{background:var(--white);border:1.5px dashed var(--border-md);border-radius:var(--r-lg);padding:32px 20px;text-align:center;}
+.ce-icon{font-size:2.5rem;opacity:.3;margin-bottom:8px;}
+.cart-empty p{font-size:14px;color:var(--ash);}
+.cart-item{
+  background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:12px;margin-bottom:10px;box-shadow:var(--sh-xs);
+  display:flex;align-items:center;gap:12px;
+}
+.ci-emoji{ width:44px;height:44px;border-radius:12px;background:var(--dew);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0; }
+.ci-info{ flex:1;min-width:0; }
+.ci-name{ font-size:14px;font-weight:700;color:var(--ink); }
+.ci-qty-label{ font-size:12px;color:var(--ash); }
+.ci-price{ font-size:14px;font-weight:800;color:var(--leaf);white-space:nowrap; }
+.ci-del{ background:none;border:none;color:var(--silver);font-size:14px;cursor:pointer;padding:4px;transition:color .15s; }
+.ci-del:hover{ color:var(--slate); }
+.total-strip{
+  position:sticky;bottom:0;background:var(--white);
+  border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:14px 18px;margin-top:12px;
+  box-shadow:0 -8px 24px rgba(10,15,12,.08);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.total-strip span{font-size:13px;color:var(--stone);}
+.total-strip .amount{font-size:18px;font-weight:800;color:var(--leaf);}
+.checkout-form{ display:flex;flex-direction:column;gap:14px; }
+.form-grid{ display:grid;grid-template-columns:1fr 1fr;gap:12px; }
+.fg.full{ grid-column:1/-1; }
+.fg label{ display:block;font-size:11px;font-weight:700;color:var(--ash);margin-bottom:6px;letter-spacing:.08em;text-transform:uppercase; }
+.fg input,.fg textarea,.fg select{
+  width:100%;border:1.5px solid var(--border-md);border-radius:var(--r-md);
+  padding:11px 14px;font-family:var(--body);font-size:14px;
+  color:var(--ink);background:var(--snow);outline:none;transition:border-color .2s;
+}
+.fg input:focus,.fg textarea:focus,.fg select:focus{ border-color:var(--sage);background:var(--white); }
+.fg textarea{ height:84px;resize:vertical; }
+.payment-compact{ display:grid;grid-template-columns:1fr 1fr;gap:10px; }
+.pay-snippet{
+  border:1px solid var(--border);background:linear-gradient(180deg,var(--white),var(--snow));
+  border-radius:var(--r-md);padding:14px;min-width:0;
+}
+.pay-primary{ border-color:var(--sage);box-shadow:0 0 0 3px rgba(46,158,71,.08); }
+.pay-snippet-label{ font-size:9.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ash);margin-bottom:6px; }
+.pay-snippet-title{ font-size:13.5px;font-weight:800;color:var(--ink);margin-bottom:5px; }
+.pay-snippet-value{ font-size:17px;font-weight:900;color:var(--leaf);letter-spacing:.03em;margin-bottom:4px; }
+.pay-snippet-sub{ font-size:11.5px;color:var(--ash);line-height:1.5;word-break:break-word; }
+.pay-confirm-note{ font-size:12px;color:var(--stone);background:var(--gold-pale);border:1px solid var(--gold-lt);border-radius:var(--r-md);padding:12px 14px;line-height:1.65; }
+.order-btn{
+  background:linear-gradient(135deg,var(--leaf),var(--fern));color:#fff;border:none;
+  border-radius:var(--r-pill);padding:16px 20px;
+  font-family:var(--body);font-size:15px;font-weight:700;width:100%;cursor:pointer;
+  box-shadow:var(--sh-grn);transition:all .2s;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.order-btn:hover{ background:linear-gradient(135deg,var(--fern),var(--sage));transform:translateY(-1px);box-shadow:0 14px 36px rgba(13,61,26,.3); }
+.spin{ width:18px;height:18px;border:2.5px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:inline-block; }
+@keyframes spin{to{transform:rotate(360deg)}}
+.success-box{ display:none;text-align:center;padding:28px 20px; }
+.success-box.show{display:block;}
+.s-icon{ font-size:3.2rem;margin-bottom:14px; }
+.success-box h3{ font-family:var(--display);font-size:1.6rem;color:var(--leaf);margin-bottom:10px; }
+.success-box p{ font-size:14px;color:var(--slate);line-height:1.75; }
+.wa-confirm-btn{ display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;border-radius:var(--r-pill);padding:12px 22px;font-weight:700;font-size:14px;margin-top:18px;transition:all .2s; }
+.wa-confirm-btn:hover{ background:#1ebe5d;transform:translateY(-1px); }
+.wa-confirm-btn svg{ width:20px;height:20px; }
+.wa-note{ font-size:12px;color:var(--ash);margin-top:8px; }
+
+@media(max-width:920px){
+  .overlay{padding:0;align-items:stretch;}
+  .cart-sheet{width:100%;max-width:none;height:100dvh;max-height:100dvh;border-radius:0;}
+  .checkout-layout{grid-template-columns:1fr;max-height:none;height:calc(100dvh - 80px);}
+  .cart-panel{border-right:none;border-bottom:1px solid var(--border);max-height:35dvh;overflow:auto;}
+  .form-grid,.payment-compact{grid-template-columns:1fr;}
+  .fg textarea{height:70px;}
+}
+@media(max-width:600px){
+  .trust-item .txt{display:none;}
+  .footer-grid{grid-template-columns:1fr;}
+  .hero-left{padding:50px 20px 36px;}
+  .hero-right{padding:16px 20px 50px;}
+}
+.wa-float{ position:fixed;right:18px;bottom:22px;z-index:600;display:inline-flex;align-items:center;gap:10px;background:#19a957;color:#fff;border-radius:var(--r-pill);padding:12px 18px;box-shadow:0 16px 36px rgba(25,169,87,.38);font-weight:800;font-size:13px;border:1px solid rgba(255,255,255,.18);transition:transform .2s; }
+.wa-float:hover{ transform:translateY(-2px); }
+@media(max-width:768px){ .wa-float span{display:none;} .wa-float{padding:13px;border-radius:50%;width:52px;height:52px;justify-content:center;} }
+.btt{ position:fixed;bottom:90px;right:18px;background:var(--leaf);color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:20px;display:none;align-items:center;justify-content:center;box-shadow:var(--sh-grn);z-index:150;cursor:pointer;transition:transform .2s; }
+.btt.vis{display:flex;}
+.btt:hover{transform:translateY(-3px);}
+
+/* SCROLL-REVEAL */
+.reveal{ opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease; }
+.reveal.visible{opacity:1;transform:none;}
+.reveal-delay-1{transition-delay:.1s;}
+.reveal-delay-2{transition-delay:.2s;}
+.reveal-delay-3{transition-delay:.3s;}
+.reveal-delay-4{transition-delay:.4s;}
+
+#shop-section,#reviews-section,#how-section,#why-section{scroll-margin-top:90px;}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <span>📍 13-9 Sukobaz Street, Dar es Salaam</span>
+  <span class="sep">|</span>
+  <a href="tel:+255672196030">📞 +255 672 196 030</a>
+  <span class="sep">|</span>
+  <a href="tel:+255785295200">+255 785 295 200</a>
+  <span class="sep">|</span>
+  <a href="mailto:getitfreshgroceries@gmail.com">✉️ getitfreshgroceries@gmail.com</a>
+  <span class="sep">|</span>
+  <a href="https://instagram.com/get_it_fresh_groceries" target="_blank" rel="noopener">📸 @get_it_fresh_groceries</a>
+</div>
+
+<!-- HEADER -->
+<header id="site-header">
+  <div class="header-inner">
+    <a class="logo-link" href="#">
+      <!-- REDESIGNED SVG LOGO — Professional, geometric, scalable -->
+      <svg class="brand-mark" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="52" height="52" rx="14" fill="#0d3d1a"/>
+        <!-- Geometric basket form — clean, minimal, iconic -->
+        <path d="M14 32 Q13 24 18 20 Q21 17 26 17 Q31 17 34 20 Q39 24 38 32 Z" fill="none" stroke="url(#g1)" stroke-width="2" stroke-linecap="round"/>
+        <!-- Produce silhouette — simplified leaf/sprout -->
+        <path d="M22 20 Q22 14 26 12 Q30 14 30 20" fill="none" stroke="url(#g2)" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="26" cy="26" r="4.5" fill="url(#g1)" opacity=".85"/>
+        <path d="M24 26 Q26 23.5 28 26 Q26 28.5 24 26Z" fill="#fff" opacity=".7"/>
+        <path d="M18 32 Q20 36 26 37 Q32 36 34 32" fill="none" stroke="url(#g1)" stroke-width="2" stroke-linecap="round"/>
+        <!-- Gold accent dot -->
+        <circle cx="38" cy="16" r="3.5" fill="#f0a500"/>
+        <defs>
+          <linearGradient id="g1" x1="14" y1="17" x2="38" y2="37" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#45bc5f"/>
+            <stop offset="100%" stop-color="#2e9e47"/>
+          </linearGradient>
+          <linearGradient id="g2" x1="22" y1="12" x2="30" y2="20" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#f0a500"/>
+            <stop offset="100%" stop-color="#45bc5f"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="wordmark">
+        <span class="wordmark-top">Get It Fresh</span>
+        <span class="wordmark-bot">Groceries</span>
+      </div>
+    </a>
+    <nav class="header-nav" aria-label="Main">
+      <a class="nav-link" href="#shop-section">Shop</a>
+      <a class="nav-link" href="#how-section">How It Works</a>
+      <a class="nav-link" href="#reviews-section">Reviews</a>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-btn" onclick="openCart()" aria-label="View cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        Cart
+        <span class="cart-badge" id="cart-count">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-line"></span>
+      <span class="hero-eyebrow-text">Dar es Salaam's Premium Fresh Market</span>
+    </div>
+    <h1 class="hero-headline">
+      Farm Fresh.<br>
+      <em>Delivered Right.</em>
+    </h1>
+    <p class="hero-sub">GET IT FRESH GROCERIES COMPANY LTD — Dar es Salaam's most trusted local green grocer. 164+ fresh products sourced daily, delivered same-day with the care of a premium market.</p>
+    <div class="hero-chips">
+      <span class="hero-chip">✅ Same-day delivery</span>
+      <span class="hero-chip">📱 M-Pesa ready</span>
+      <span class="hero-chip">🥬 Daily sourced produce</span>
+      <span class="hero-chip">🛍️ Custom orders</span>
+    </div>
+    <div class="hero-actions">
+      <button class="btn-gold" onclick="document.getElementById('shop-section').scrollIntoView({behavior:'smooth'})">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Start Shopping
+      </button>
+      <a class="btn-ghost" href="tel:+255792748449">📞 Call to Order</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-num">164+</div>
+        <div class="stat-lbl">Products across 8 fresh categories</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">Same Day</div>
+        <div class="stat-lbl">Fast delivery all across Dar es Salaam</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">5.0 ★</div>
+        <div class="stat-lbl">Customer rating from verified buyers</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">M-Pesa</div>
+        <div class="stat-lbl">Pay with M-Pesa, NMB, Azania or cash</div>
+      </div>
+    </div>
+    <div class="hero-promise">
+      <div class="hero-promise-title">Fresh market feel. Premium digital experience.</div>
+      <p>Browse 164+ products, build your basket, and confirm your order via WhatsApp in minutes. Open the cart anytime — add custom items not on the list.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item"><span class="marquee-dot"></span>Fresh Fruits</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Premium Meats</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Organic Vegetables</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Herbs &amp; Spices</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Imported Goods</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Same-Day Delivery</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>M-Pesa Accepted</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Dar es Salaam</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Fresh Fruits</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Premium Meats</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Organic Vegetables</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Herbs &amp; Spices</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Imported Goods</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Same-Day Delivery</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>M-Pesa Accepted</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Dar es Salaam</span>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><div class="trust-icon">🌿</div><div class="txt"><strong>Always Fresh</strong><span>Daily sourced produce</span></div></div>
+    <div class="trust-item"><div class="trust-icon">🚚</div><div class="txt"><strong>Fast Delivery</strong><span>Same-day available</span></div></div>
+    <div class="trust-item"><div class="trust-icon">📱</div><div class="txt"><strong>Easy Payments</strong><span>M-Pesa, Bank &amp; Cash</span></div></div>
+    <div class="trust-item"><div class="trust-icon">🏪</div><div class="txt"><strong>164+ Products</strong><span>Full grocery range</span></div></div>
+    <div class="trust-item"><div class="trust-icon">💬</div><div class="txt"><strong>WhatsApp Orders</strong><span>Instant confirmation</span></div></div>
+  </div>
+</div>
+
+<!-- SEARCH -->
+<div class="search-section" id="shop-section">
+  <div class="search-wrap">
+    <span class="search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+    <input type="text" id="search-input" placeholder="Search products… e.g. Tomatoes, Chicken, Cardamon" oninput="onSearch(this.value)" autocomplete="off">
+    <button class="search-clear" id="search-clear" onclick="clearSearch()" aria-label="Clear">✕</button>
+  </div>
+</div>
+
+<!-- CATEGORY PILLS -->
+<div class="cat-section">
+  <div class="cat-scroll">
+    <div class="cat-pills">
+      <button class="cat-pill active" onclick="setCat('all',this)"><span class="cat-emoji">🛒</span> All</button>
+      <button class="cat-pill" onclick="setCat('fruits',this)"><span class="cat-emoji">🍊</span> Fruits</button>
+      <button class="cat-pill" onclick="setCat('veg',this)"><span class="cat-emoji">🥦</span> Vegetables</button>
+      <button class="cat-pill" onclick="setCat('herbs',this)"><span class="cat-emoji">🌿</span> Herbs &amp; Spices</button>
+      <button class="cat-pill" onclick="setCat('meat',this)"><span class="cat-emoji">🥩</span> Meat &amp; Fish</button>
+      <button class="cat-pill" onclick="setCat('grains',this)"><span class="cat-emoji">🌾</span> Grains</button>
+      <button class="cat-pill" onclick="setCat('food',this)"><span class="cat-emoji">🫙</span> Food Products</button>
+      <button class="cat-pill" onclick="setCat('house',this)"><span class="cat-emoji">🏠</span> Household</button>
+      <button class="cat-pill" onclick="setCat('custom',this)"><span class="cat-emoji">✏️</span> Custom</button>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<div class="main-section" id="main-content">
+  <div class="sec-header">
+    <div class="sec-title-bar" id="sec-title">All Products</div>
+    <div class="sortbar">
+      <span class="sec-meta" id="sec-count"></span>
+      <select class="sort-select" id="sort-select" onchange="setSort(this.value)">
+        <option value="default">Sort: Featured</option>
+        <option value="name-asc">Name: A–Z</option>
+        <option value="price-asc">Price: Low → High</option>
+        <option value="price-desc">Price: High → Low</option>
+      </select>
+    </div>
+  </div>
+  <div class="product-grid" id="product-grid"></div>
+</div>
+
+<!-- REVIEWS -->
+<div class="container">
+  <section id="reviews-section" class="reveal">
+    <div class="section-label">Customer Reviews</div>
+    <h2 style="font-family:var(--display);font-size:1.9rem;color:var(--ink);margin-bottom:4px;">What our customers say</h2>
+    <div class="reviews-grid">
+      <div class="review-card" style="border-color:var(--mist);background:linear-gradient(160deg,var(--dew),#fff);position:relative;">
+        <div style="position:absolute;top:14px;right:14px;display:flex;align-items:center;gap:5px;background:#fff;border:1px solid var(--border);border-radius:999px;padding:3px 10px;font-size:10.5px;font-weight:700;color:#4285F4;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Google Review
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I used Get It Fresh Groceries while staying at a hotel in Dar es Salaam — the delivery and service were outstanding. I'd recommend them to anyone needing fresh, high-quality ingredients. Whether you're a small business or an individual, this is the place."</p>
+        <div class="review-author"><div class="review-avatar" style="background:linear-gradient(135deg,#4285F4,#34A853);">B</div><div><div class="review-name">Bernard Ngie</div><div class="review-loc">Hotel guest · Dar es Salaam</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The freshest produce I've ever had delivered in Dar. The avocados were perfectly ripe and arrived the same day. Ordering on WhatsApp was so easy — I've switched entirely."</p>
+        <div class="review-author"><div class="review-avatar">A</div><div><div class="review-name">Amina Hassan</div><div class="review-loc">Msasani, Dar es Salaam</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I order every week for my restaurant. Pricing is fair and vegetables are always fresh. M-Pesa payment makes it incredibly convenient. Highly recommend to any food business in Dar."</p>
+        <div class="review-author"><div class="review-avatar" style="background:linear-gradient(135deg,var(--fern),var(--sage));">J</div><div><div class="review-name">Joseph Mwanga</div><div class="review-loc">Restaurant owner · Mikocheni</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Quick delivery and such a wide variety. I especially love the tropical fruits — Dodoma grapes and passion fruit are always in stock. This is premium service at market prices."</p>
+        <div class="review-author"><div class="review-avatar" style="background:linear-gradient(135deg,#e67e22,#f39c12);">F</div><div><div class="review-name">Fatuma Ally</div><div class="review-loc">Kinondoni, Dar es Salaam</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Great quality meat and fish, always fresh. Prices are competitive. The custom order feature is genius — I can request anything not on the list and they source it for me."</p>
+        <div class="review-author"><div class="review-avatar" style="background:linear-gradient(135deg,#1A3CA8,#2563EB);">D</div><div><div class="review-name">David Kimaro</div><div class="review-loc">Masaki, Dar es Salaam</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Very professional. The website is easy to use and NMB bank transfer payment is seamless. The WhatsApp order confirmation gives me total peace of mind every single time."</p>
+        <div class="review-author"><div class="review-avatar" style="background:linear-gradient(135deg,#0F766E,#14B8A6);">M</div><div><div class="review-name">Mohammed Rashid</div><div class="review-loc">Upanga, Dar es Salaam</div></div></div>
+      </div>
+    </div>
+    <div class="reviews-summary">
+      <span class="rs-score">5.0</span>
+      <div class="rs-info">
+        <div class="review-stars" style="font-size:18px;margin-bottom:5px;">★★★★★</div>
+        <strong>Excellent rating across all verified customers</strong>
+        <span>Based on real orders from customers across Dar es Salaam</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="container">
+  <section class="how-section reveal" id="how-section">
+    <div class="section-label">How It Works</div>
+    <h2>Order in three simple steps</h2>
+    <div class="steps-grid">
+      <div class="step-card"><div class="step-no">1</div><h3>Browse &amp; Add to Cart</h3><p>Use category filters or search to find products. Add items to your cart with one tap. Use the custom item field for anything not listed.</p></div>
+      <div class="step-card"><div class="step-no">2</div><h3>Review &amp; Checkout</h3><p>Open your cart, confirm quantities, enter delivery details and select your preferred payment method.</p></div>
+      <div class="step-card"><div class="step-no">3</div><h3>Pay &amp; Confirm on WhatsApp</h3><p>Complete payment via M-Pesa, NMB, Azania Bank or cash. Your full order is pre-filled in WhatsApp — tap Send for instant confirmation.</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- WHY US -->
+<section class="why-section" id="why-section">
+  <div class="why-inner">
+    <div class="why-label">Why Get It Fresh</div>
+    <h2 class="why-title">Dar es Salaam's <em>freshest</em> choice</h2>
+    <div class="feat-grid">
+      <div class="feat-card reveal"><div class="feat-num">01</div><div class="feat-icon">🌿</div><div class="feat-title">Quality &amp; Freshness</div><div class="feat-desc">Every product is daily-sourced. No stale stock, no compromises. We stake our reputation on what we deliver.</div></div>
+      <div class="feat-card reveal reveal-delay-1"><div class="feat-num">02</div><div class="feat-icon">📱</div><div class="feat-title">Mobile-First Ordering</div><div class="feat-desc">Designed for phones. Browse, add, checkout and confirm via WhatsApp in under 3 minutes.</div></div>
+      <div class="feat-card reveal reveal-delay-2"><div class="feat-num">03</div><div class="feat-icon">🚀</div><div class="feat-title">Same-Day Delivery</div><div class="feat-desc">Order before noon, receive before sundown. We cover all of Dar es Salaam with professional drivers.</div></div>
+      <div class="feat-card reveal reveal-delay-3"><div class="feat-num">04</div><div class="feat-icon">💳</div><div class="feat-title">Flexible Payments</div><div class="feat-desc">M-Pesa, NMB Bank, Azania Bank, Tigo Pesa, Airtel Money, HaloPesa or cash on delivery.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-row">
+          <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAMzAs4DASIAAhEBAxEB/8QAHAABAAEFAQEAAAAAAAAAAAAAAAcBBAUGCAID/8QATBABAAEDAwIDAwcJBQQHCQAAAAECAwQFBhEHIRIxQQgTURQiMmFxgbEVFhgjVpGTocEkQlJi0Rdyc3QzNYKDsrPCJic2RFRjZKPh/8QAGwEBAAIDAQEAAAAAAAAAAAAAAAECAwQFBgf/xAAuEQEAAgIBAwQBBAEDBQAAAAAAAQIDEQQSITEFExRRQQYiMmFxIzOBFSRCUpH/2gAMAwEAAhEDEQA/AOywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf//Z" alt="Get It Fresh Groceries" height="50">
+        </div>
+        <p class="footer-desc">Your trusted local green grocer and supplier in Dar es Salaam. Quality fresh produce and groceries, delivered with pride.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>📍 13-9 Sukobaz Street, DSM</li>
+          <li><a href="tel:+255672196030">📞 +255 672 196 030</a></li>
+          <li><a href="tel:+255785295200">+255 785 295 200</a></li>
+          <li><a href="mailto:getitfreshgroceries@gmail.com">✉️ Email Us</a></li>
+          <li><a href="https://instagram.com/get_it_fresh_groceries" target="_blank" rel="noopener">📸 Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Payment</h4>
+        <ul>
+          <li>💵 Cash on Delivery</li>
+          <li>🏦 Azania: <strong style="color:var(--gold-lt)">008000111459</strong></li>
+          <li>📱 M-Pesa Lipa: <strong style="color:var(--gold-lt)">55731612</strong></li>
+          <li>🏦 NMB: <strong style="color:var(--gold-lt)">22210050545</strong></li>
+          <li>📱 NMB Lipa: <strong style="color:var(--gold-lt)">21869399</strong></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li>🍊 Fruits (23)</li>
+          <li>🥦 Vegetables (59)</li>
+          <li>🌿 Herbs &amp; Spices (24)</li>
+          <li>🥩 Meat &amp; Fish (22)</li>
+          <li>🌾 Grains (8)</li>
+          <li>🫙 Food Products (20)</li>
+          <li>🏠 Household (8)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 GET IT FRESH GROCERIES COMPANY LTD · Dar es Salaam, Tanzania</span>
+      <span>Made with ❤️ in Tanzania</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wa-float" href="https://wa.me/255792748449" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span>WhatsApp</span>
+</a>
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<!-- CART OVERLAY -->
+<div class="overlay" id="cart-overlay">
+  <div class="cart-sheet">
+    <div class="sheet-head">
+      <div>
+        <span class="sheet-kicker">Secure Checkout</span>
+        <span class="sheet-title">Your Basket</span>
+      </div>
+      <button class="sheet-close" onclick="closeCart()" aria-label="Close">✕</button>
+    </div>
+    <div class="checkout-layout">
+      <div class="cart-panel">
+        <div class="panel-top">
+          <div><span class="panel-kicker">Order Summary</span><h3>Review your items</h3></div>
+          <div class="panel-badge" id="cart-summary-count">0 items</div>
+        </div>
+        <div id="cart-body"></div>
+      </div>
+      <div class="form-panel">
+        <div class="success-box" id="success-box">
+          <div class="s-icon">🎉</div>
+          <h3>Order Submitted!</h3>
+          <p id="success-msg"></p>
+        </div>
+        <div class="checkout-form" id="checkout-form">
+          <div class="form-grid">
+            <div class="fg"><label>Full Name</label><input type="text" id="f-name" placeholder="e.g. John Mkwawa" autocomplete="name" required></div>
+            <div class="fg"><label>Phone Number</label><input type="tel" id="f-phone" placeholder="+255 7XX XXX XXX" autocomplete="tel" required></div>
+            <div class="fg full"><label>Delivery Address</label><input type="text" id="f-addr" placeholder="Street, house number, area, city" autocomplete="street-address" required></div>
+            <div class="fg full"><label>Note <span style="font-weight:400;color:var(--silver)">(Optional)</span></label><textarea id="f-note" placeholder="Landmark, gate colour, apartment number..."></textarea></div>
+            <div class="fg full">
+              <label>Payment Method</label>
+              <select id="f-payment" required>
+                <option value="">-- Select payment method --</option>
+                <option value="Cash Payment">💵 Cash Payment</option>
+                <option value="M-Pesa">📱 M-Pesa</option>
+                <option value="Tigo Pesa">📱 Tigo Pesa</option>
+                <option value="Airtel Money">📱 Airtel Money</option>
+                <option value="HaloPesa">📱 HaloPesa</option>
+                <option value="Azania Bank Transfer">🏦 Azania Bank Transfer</option>
+                <option value="NMB Bank Transfer">🏦 NMB Bank Transfer</option>
+              </select>
+            </div>
+          </div>
+          <div class="payment-compact">
+            <div class="pay-snippet pay-primary"><div class="pay-snippet-label">Bank</div><div class="pay-snippet-title">Azania Bank</div><div class="pay-snippet-value">008000111459</div><div class="pay-snippet-sub">GET IT FRESH GROCERIES</div></div>
+            <div class="pay-snippet"><div class="pay-snippet-label">M-Pesa</div><div class="pay-snippet-title">M-Pesa Lipa</div><div class="pay-snippet-value">55731612</div><div class="pay-snippet-sub">GET IT FRESH</div></div>
+            <div class="pay-snippet"><div class="pay-snippet-label">Bank</div><div class="pay-snippet-title">NMB Bank</div><div class="pay-snippet-value">22210050545</div><div class="pay-snippet-sub">GET IT FRESH GROCERIES</div></div>
+            <div class="pay-snippet"><div class="pay-snippet-label">Lipa Number</div><div class="pay-snippet-title">NMB Lipa</div><div class="pay-snippet-value">21869399</div><div class="pay-snippet-sub">GET IT FRESH</div></div>
+            <div class="pay-snippet"><div class="pay-snippet-label">Flexible</div><div class="pay-snippet-title">Cash on Delivery</div><div class="pay-snippet-sub">Available for eligible local orders after confirmation.</div></div>
+            <div class="pay-snippet"><div class="pay-snippet-label">Flexible</div><div class="pay-snippet-title">Mobile Transfer</div><div class="pay-snippet-sub">Available on request after order confirmation.</div></div>
+          </div>
+          <div class="pay-confirm-note">After placing your order, share your <strong>order number</strong> and <strong>name</strong> so we can confirm faster.</div>
+          <button class="order-btn" onclick="placeOrder()" id="order-btn">
+            <span id="btn-text">🛒 Place Order</span>
+            <span id="btn-spin" class="spin" style="display:none;"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const WA='255792748449';
+let cart={},activeCat='all',searchQ='',sortMode='default';
+let orderNum=Math.floor(10000+Math.random()*90000);
+const CAT_NAMES={all:'All Products',fruits:'Fruits',veg:'Vegetables',herbs:'Herbs & Spices',meat:'Meat, Fish & Poultry',grains:'Grains',food:'Food Products',house:'Household Essentials',custom:'Custom Items'};
+function fmt(n){return 'TZS '+Number(n).toLocaleString();}
+function catLabel(c){return {fruits:'Fruits',veg:'Vegetables',herbs:'Herbs',meat:'Meat & Fish',grains:'Grains',food:'Food',house:'Household'}[c]||'Custom';}
+
+const PRODUCTS=[
+  {id:1,name:'Apples (Green/Red)',price:1500,unit:'PC',icon:'🍎',cat:'fruits'},
+  {id:2,name:'Avocado',price:1500,unit:'PC',icon:'🥑',cat:'fruits'},
+  {id:3,name:'Beetroot',price:5000,unit:'KG',icon:'🟣',cat:'fruits'},
+  {id:4,name:'Coconut Fresh',price:1800,unit:'PC',icon:'🥥',cat:'fruits'},
+  {id:5,name:'Dodoma Grapes',price:7500,unit:'PUNNET',icon:'🍇',cat:'fruits'},
+  {id:6,name:'Imported Grapes',price:12000,unit:'PUNNET',icon:'🍇',cat:'fruits'},
+  {id:7,name:'Lemon',price:3500,unit:'KG',icon:'🍋',cat:'fruits'},
+  {id:8,name:'Lime',price:4000,unit:'KG',icon:'🍈',cat:'fruits'},
+  {id:9,name:'Madafu',price:1800,unit:'PC',icon:'🥥',cat:'fruits'},
+  {id:10,name:'Mangoes',price:1000,unit:'PC',icon:'🥭',cat:'fruits'},
+  {id:11,name:'Oranges',price:300,unit:'KG',icon:'🍊',cat:'fruits'},
+  {id:12,name:'Papaya',price:3000,unit:'PC',icon:'🍑',cat:'fruits'},
+  {id:13,name:'Passion Fruit',price:5000,unit:'KG',icon:'🟡',cat:'fruits'},
+  {id:14,name:'Pineapples',price:5000,unit:'PC',icon:'🍍',cat:'fruits'},
+  {id:15,name:'Plums',price:5000,unit:'KG',icon:'🫐',cat:'fruits'},
+  {id:16,name:'Pumpkin',price:4000,unit:'PC',icon:'🎃',cat:'fruits'},
+  {id:17,name:'Strawberries',price:7000,unit:'PACK',icon:'🍓',cat:'fruits'},
+  {id:18,name:'Sweet Banana (10pc)',price:3500,unit:'BUNCH',icon:'🍌',cat:'fruits'},
+  {id:19,name:'Sweet Melon',price:5500,unit:'KG',icon:'🍈',cat:'fruits'},
+  {id:20,name:'Tangerine Local',price:400,unit:'PC',icon:'🍊',cat:'fruits'},
+  {id:21,name:'Ubuyu',price:5000,unit:'KG',icon:'🌰',cat:'fruits'},
+  {id:22,name:'Ukwaju',price:5000,unit:'KG',icon:'🟤',cat:'fruits'},
+  {id:23,name:'Water Melon',price:4000,unit:'PC',icon:'🍉',cat:'fruits'},
+  {id:24,name:'Baby Potatoes',price:2500,unit:'KG',icon:'🥔',cat:'veg'},
+  {id:25,name:'Banana Cooking Bukoba 10pcs',price:3500,unit:'BUNCH',icon:'🍌',cat:'veg'},
+  {id:26,name:'Banana Cooking Bukoba Mkungu',price:50000,unit:'MKUNGU',icon:'🍌',cat:'veg'},
+  {id:27,name:'Banana Cooking Matoke 10pcs',price:3500,unit:'BUNCH',icon:'🍌',cat:'veg'},
+  {id:28,name:'Banana Cooking Matoke Mkungu',price:40000,unit:'MKUNGU',icon:'🍌',cat:'veg'},
+  {id:29,name:'Banana Cooking Mshale Mkungu',price:40000,unit:'MKUNGU',icon:'🍌',cat:'veg'},
+  {id:30,name:'Banana Cooking Mzuzu 10pcs',price:4500,unit:'BUNCH',icon:'🍌',cat:'veg'},
+  {id:31,name:'Banana Cooking Mzuzu Mkungu',price:55000,unit:'MKUNGU',icon:'🍌',cat:'veg'},
+  {id:32,name:'Bitter Gourd',price:4500,unit:'KG',icon:'🥒',cat:'veg'},
+  {id:33,name:'Broccoli',price:8500,unit:'KG',icon:'🥦',cat:'veg'},
+  {id:34,name:'Butternut',price:3500,unit:'KG',icon:'🧡',cat:'veg'},
+  {id:35,name:'Cabbage Green',price:3000,unit:'PC',icon:'🥬',cat:'veg'},
+  {id:36,name:'Cabbage Red',price:2500,unit:'PC',icon:'🟣',cat:'veg'},
+  {id:37,name:'Carrots',price:3000,unit:'KG',icon:'🥕',cat:'veg'},
+  {id:38,name:'Cassava',price:2500,unit:'KG',icon:'🍠',cat:'veg'},
+  {id:39,name:'Cauliflower',price:6000,unit:'KG',icon:'🤍',cat:'veg'},
+  {id:40,name:'Celery',price:1200,unit:'BUNCH',icon:'🌿',cat:'veg'},
+  {id:41,name:'Cherry Tomatoes',price:6000,unit:'PACK',icon:'🍅',cat:'veg'},
+  {id:42,name:'Chinese Cabbage',price:4500,unit:'KG',icon:'🥬',cat:'veg'},
+  {id:43,name:'Coriander',price:1200,unit:'BUNCH',icon:'🌿',cat:'veg'},
+  {id:44,name:'Cucumber',price:2500,unit:'KG',icon:'🥒',cat:'veg'},
+  {id:45,name:'Eggplant',price:2500,unit:'KG',icon:'🍆',cat:'veg'},
+  {id:46,name:'French Beans',price:5500,unit:'KG',icon:'🫘',cat:'veg'},
+  {id:47,name:'Ginger',price:6000,unit:'KG',icon:'🫚',cat:'veg'},
+  {id:48,name:'Green Chillies Long Red/Green',price:5500,unit:'KG',icon:'🌶️',cat:'veg'},
+  {id:49,name:'Green Chillies Long Sado',price:6500,unit:'SADO',icon:'🌶️',cat:'veg'},
+  {id:50,name:'Green Chillies Mbuzi',price:5500,unit:'KG',icon:'🌶️',cat:'veg'},
+  {id:51,name:'Green Chillies Mbuzi Sado',price:6500,unit:'SADO',icon:'🌶️',cat:'veg'},
+  {id:52,name:'Green Peas',price:8000,unit:'KG',icon:'🫛',cat:'veg'},
+  {id:53,name:'Green Pepper',price:3500,unit:'KG',icon:'🫑',cat:'veg'},
+  {id:54,name:'Iceberg Lettuce',price:4500,unit:'KG',icon:'🥬',cat:'veg'},
+  {id:55,name:'Imported Garlic',price:13000,unit:'KG',icon:'🧄',cat:'veg'},
+  {id:56,name:'Kisamvu',price:1000,unit:'BUNCH',icon:'🌿',cat:'veg'},
+  {id:57,name:'Leeks',price:1200,unit:'BUNCH',icon:'🧅',cat:'veg'},
+  {id:58,name:'Lemon Grass',price:1000,unit:'BUNCH',icon:'🌾',cat:'veg'},
+  {id:59,name:'Matembele',price:800,unit:'BUNCH',icon:'🍃',cat:'veg'},
+  {id:60,name:'Mchicha',price:800,unit:'BUNCH',icon:'🥬',cat:'veg'},
+  {id:61,name:'Mini Cucumber',price:3500,unit:'KG',icon:'🥒',cat:'veg'},
+  {id:62,name:'Mushroom Button',price:55000,unit:'PCT',icon:'🍄',cat:'veg'},
+  {id:63,name:'Mushroom Oyster',price:22000,unit:'KG',icon:'🍄',cat:'veg'},
+  {id:64,name:'Nyanya Chungu White Eggplant',price:3000,unit:'KG',icon:'⚪',cat:'veg'},
+  {id:65,name:'Nyanya Chungu Sado',price:5000,unit:'SADO',icon:'⚪',cat:'veg'},
+  {id:66,name:'Okra Bamia',price:3500,unit:'KG',icon:'🟢',cat:'veg'},
+  {id:67,name:'Okra Bamia Sado',price:5000,unit:'SADO',icon:'🟢',cat:'veg'},
+  {id:68,name:'Onion',price:3500,unit:'KG',icon:'🧅',cat:'veg'},
+  {id:69,name:'Potatoes',price:2500,unit:'KG',icon:'🥔',cat:'veg'},
+  {id:70,name:'Potatoes Sado',price:6500,unit:'SADO',icon:'🥔',cat:'veg'},
+  {id:71,name:'Potatoes Gunia',price:100000,unit:'GUNIA',icon:'🥔',cat:'veg'},
+  {id:72,name:'Red Pepper',price:9000,unit:'KG',icon:'🫑',cat:'veg'},
+  {id:73,name:'Soft Lettuce',price:6000,unit:'PACK',icon:'🥬',cat:'veg'},
+  {id:74,name:'Spinach',price:800,unit:'BUNCH',icon:'🥬',cat:'veg'},
+  {id:75,name:'Spring Onions',price:1200,unit:'BUNCH',icon:'🧅',cat:'veg'},
+  {id:76,name:'Sweet Potatoes',price:2500,unit:'KG',icon:'🍠',cat:'veg'},
+  {id:77,name:'Tomatoes',price:2700,unit:'KG',icon:'🍅',cat:'veg'},
+  {id:78,name:'Tomatoes Sado',price:6500,unit:'SADO',icon:'🍅',cat:'veg'},
+  {id:79,name:'White Onions',price:7000,unit:'KG',icon:'🧅',cat:'veg'},
+  {id:80,name:'Yams',price:5000,unit:'KG',icon:'🍠',cat:'veg'},
+  {id:81,name:'Yellow Pepper',price:9000,unit:'KG',icon:'🫑',cat:'veg'},
+  {id:82,name:'Zuchini',price:3500,unit:'KG',icon:'🥒',cat:'veg'},
+  {id:83,name:'Aji na Moto',price:4500,unit:'PC',icon:'🌶️',cat:'herbs'},
+  {id:84,name:'Basil',price:1200,unit:'BUNCH',icon:'🌿',cat:'herbs'},
+  {id:85,name:'Bay Leaves',price:5500,unit:'KG',icon:'🍃',cat:'herbs'},
+  {id:86,name:'Black Pepper Powder',price:30000,unit:'KG',icon:'🫙',cat:'herbs'},
+  {id:87,name:'Black Pepper Solid',price:27000,unit:'KG',icon:'⚫',cat:'herbs'},
+  {id:88,name:'Cardamon Powder',price:55000,unit:'KG',icon:'🫙',cat:'herbs'},
+  {id:89,name:'Cardamon Solid',price:42500,unit:'KG',icon:'🟢',cat:'herbs'},
+  {id:90,name:'Cinnamon Powder',price:18000,unit:'KG',icon:'🟤',cat:'herbs'},
+  {id:91,name:'Cinnamon Stick',price:12500,unit:'KG',icon:'🟤',cat:'herbs'},
+  {id:92,name:'Coriander Powder',price:13000,unit:'KG',icon:'🫙',cat:'herbs'},
+  {id:93,name:'Coriander Seeds',price:10000,unit:'KG',icon:'🟡',cat:'herbs'},
+  {id:94,name:'Cumin Seeds',price:14500,unit:'KG',icon:'🟤',cat:'herbs'},
+  {id:95,name:'Cumin Powder',price:19000,unit:'KG',icon:'🫙',cat:'herbs'},
+  {id:96,name:'Curry Powder',price:13000,unit:'KG',icon:'🟡',cat:'herbs'},
+  {id:97,name:'Garam Masala',price:16000,unit:'KG',icon:'🫙',cat:'herbs'},
+  {id:98,name:'Garlic Powder',price:14500,unit:'KG',icon:'🫙',cat:'herbs'},
+  {id:99,name:'Lemon Powder',price:6000,unit:'KG',icon:'🟡',cat:'herbs'},
+  {id:100,name:'Mint',price:1200,unit:'BUNCH',icon:'🌿',cat:'herbs'},
+  {id:101,name:'Paprika',price:14500,unit:'KG',icon:'🔴',cat:'herbs'},
+  {id:102,name:'Parsley',price:1200,unit:'BUNCH',icon:'🌿',cat:'herbs'},
+  {id:103,name:'Pilau Masala',price:17000,unit:'KG',icon:'🫙',cat:'herbs'},
+  {id:104,name:'Rosemary',price:1200,unit:'BUNCH',icon:'🌿',cat:'herbs'},
+  {id:105,name:'Tea Masala',price:20000,unit:'KG',icon:'🫙',cat:'herbs'},
+  {id:106,name:'Turmeric Powder',price:13000,unit:'KG',icon:'🟡',cat:'herbs'},
+  {id:107,name:'Beef Fillet',price:21000,unit:'KG',icon:'🥩',cat:'meat'},
+  {id:108,name:'Beef Intestine',price:6500,unit:'KG',icon:'🥩',cat:'meat'},
+  {id:109,name:'Beef Ribs',price:14000,unit:'KG',icon:'🥩',cat:'meat'},
+  {id:110,name:'Beef Steak',price:16000,unit:'KG',icon:'🥩',cat:'meat'},
+  {id:111,name:'Beef Stew Bone',price:12000,unit:'KG',icon:'🦴',cat:'meat'},
+  {id:112,name:'Beef Vienna KE',price:10000,unit:'PCT',icon:'🌭',cat:'meat'},
+  {id:113,name:'Beef Vienna TZ',price:10000,unit:'PCT',icon:'🌭',cat:'meat'},
+  {id:114,name:'Changu',price:15500,unit:'KG',icon:'🐟',cat:'meat'},
+  {id:115,name:'Chicken Whole Kienyeji',price:25000,unit:'WHOLE',icon:'🍗',cat:'meat'},
+  {id:116,name:'Chicken Whole Kisasa',price:10000,unit:'WHOLE',icon:'🍗',cat:'meat'},
+  {id:117,name:'Dagaa Bukoba',price:14000,unit:'KG',icon:'🐠',cat:'meat'},
+  {id:118,name:'Dagaa Kigoma',price:42000,unit:'KG',icon:'🐠',cat:'meat'},
+  {id:119,name:'Eggs Kienyeji',price:22000,unit:'TRAY',icon:'🥚',cat:'meat'},
+  {id:120,name:'Eggs Kisasa',price:11000,unit:'TRAY',icon:'🥚',cat:'meat'},
+  {id:121,name:'Minced Meat',price:14000,unit:'KG',icon:'🥩',cat:'meat'},
+  {id:122,name:'Nundu',price:17000,unit:'KG',icon:'🥩',cat:'meat'},
+  {id:123,name:'Ox-Liver',price:14000,unit:'KG',icon:'🥩',cat:'meat'},
+  {id:124,name:'Red Snapper',price:23500,unit:'KG',icon:'🐟',cat:'meat'},
+  {id:125,name:'Samaki Sangara',price:14000,unit:'KG',icon:'🐟',cat:'meat'},
+  {id:126,name:'Samaki Sato',price:16500,unit:'KG',icon:'🐟',cat:'meat'},
+  {id:127,name:'Tuna',price:25000,unit:'KG',icon:'🐟',cat:'meat'},
+  {id:128,name:'Mbuzi (Whole)',price:260000,unit:'WHOLE',icon:'🐐',cat:'meat'},
+  {id:129,name:'Azam Baking Flour',price:3500,unit:'KG',icon:'🌾',cat:'grains'},
+  {id:130,name:'Azam PPF',price:3500,unit:'KG',icon:'🌾',cat:'grains'},
+  {id:131,name:'Dona Flour',price:2500,unit:'KG',icon:'🌾',cat:'grains'},
+  {id:132,name:'Maize Flour',price:2800,unit:'KG',icon:'🌽',cat:'grains'},
+  {id:133,name:'Maize Flour 25kg',price:31500,unit:'BAG',icon:'🌽',cat:'grains'},
+  {id:134,name:'Red Beans',price:4500,unit:'KG',icon:'🫘',cat:'grains'},
+  {id:135,name:'White Beans',price:4600,unit:'KG',icon:'🫘',cat:'grains'},
+  {id:136,name:'Yellow Beans Dry',price:4600,unit:'KG',icon:'🫘',cat:'grains'},
+  {id:137,name:'Apple Cider',price:22500,unit:'PCT',icon:'🍶',cat:'food'},
+  {id:138,name:'Azam Coconut',price:1500,unit:'PCT',icon:'🥥',cat:'food'},
+  {id:139,name:'BBQ Sauce',price:8500,unit:'BOTTLE',icon:'🍶',cat:'food'},
+  {id:140,name:'Black Olives',price:6000,unit:'CAN',icon:'🫒',cat:'food'},
+  {id:141,name:'Cereal Cornflakes/Weetabix',price:14000,unit:'BOX',icon:'🥣',cat:'food'},
+  {id:142,name:'Cooking Oil 20L',price:96500,unit:'20LTRS',icon:'🫙',cat:'food'},
+  {id:143,name:'Lemon Juice',price:10500,unit:'PCT',icon:'🍋',cat:'food'},
+  {id:144,name:'Mayonnaise (American Garden)',price:22500,unit:'PCT',icon:'🫙',cat:'food'},
+  {id:145,name:'Mozzarella Cheese',price:20500,unit:'KG',icon:'🧀',cat:'food'},
+  {id:146,name:'Oyster Sauce',price:8000,unit:'PCT',icon:'🍶',cat:'food'},
+  {id:147,name:'Peanut Butter',price:6500,unit:'KG',icon:'🫙',cat:'food'},
+  {id:148,name:'Salt',price:500,unit:'PCT',icon:'🧂',cat:'food'},
+  {id:149,name:'Sliced Cheese',price:11500,unit:'PCT',icon:'🧀',cat:'food'},
+  {id:150,name:'Soy Sauce',price:6500,unit:'PCT',icon:'🍶',cat:'food'},
+  {id:151,name:'Spaghetti',price:3500,unit:'PCT',icon:'🍝',cat:'food'},
+  {id:152,name:'Sugar',price:4800,unit:'KG',icon:'🫙',cat:'food'},
+  {id:153,name:'Tomato Sauce Red Gold 5L',price:6000,unit:'5LTRS',icon:'🍅',cat:'food'},
+  {id:154,name:'Tomato Sauce American Garden 1L',price:16500,unit:'1LTR',icon:'🍅',cat:'food'},
+  {id:155,name:'Yellow Mustard',price:6000,unit:'PCT',icon:'🟡',cat:'food'},
+  {id:156,name:'Vinegar',price:3500,unit:'PCT',icon:'🧪',cat:'food'},
+  {id:157,name:'Bamboo Sticks',price:2000,unit:'PCT',icon:'🎋',cat:'house'},
+  {id:158,name:'Cling Film',price:21500,unit:'PCT',icon:'🎁',cat:'house'},
+  {id:159,name:'Dishwashing Soap',price:11500,unit:'PCT',icon:'🧴',cat:'house'},
+  {id:160,name:'Foil Kubwa',price:21500,unit:'PCT',icon:'🫙',cat:'house'},
+  {id:161,name:'Gloves',price:13000,unit:'PCT',icon:'🧤',cat:'house'},
+  {id:162,name:'Sauce Cups',price:5500,unit:'PCT',icon:'🫙',cat:'house'},
+  {id:163,name:'Takeaway',price:550,unit:'PC',icon:'📦',cat:'house'},
+  {id:164,name:'Toothpick',price:1500,unit:'PCT',icon:'🪥',cat:'house'},
+];
+
+function setSort(m){sortMode=m;renderGrid();}
+function setCat(cat,btn){
+  activeCat=cat;searchQ='';
+  document.getElementById('search-input').value='';
+  document.querySelectorAll('.cat-pill').forEach(p=>p.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  document.querySelector('.cat-section').scrollIntoView({behavior:'smooth',block:'start'});
+  renderGrid();
+}
+function onSearch(v){
+  searchQ=v.trim();
+  document.getElementById('search-clear').classList.toggle('vis',!!searchQ);
+  if(searchQ){document.querySelectorAll('.cat-pill').forEach(p=>p.classList.remove('active'));activeCat='search';}
+  renderGrid();
+}
+function clearSearch(){
+  document.getElementById('search-input').value='';
+  document.getElementById('search-clear').classList.remove('vis');
+  searchQ='';activeCat='all';
+  document.querySelectorAll('.cat-pill')[0].classList.add('active');
+  renderGrid();
+}
+function getFiltered(){
+  let list=PRODUCTS.slice();
+  if(activeCat!=='all'&&activeCat!=='custom'&&activeCat!=='search')list=list.filter(p=>p.cat===activeCat);
+  if(activeCat==='custom')list=list.filter(p=>p.cat==='custom');
+  if(searchQ){const q=searchQ.toLowerCase();list=PRODUCTS.filter(p=>p.name.toLowerCase().includes(q)||(p.unit||'').toLowerCase().includes(q));}
+  if(sortMode==='name-asc')list.sort((a,b)=>a.name.localeCompare(b.name));
+  if(sortMode==='price-asc')list.sort((a,b)=>a.price-b.price);
+  if(sortMode==='price-desc')list.sort((a,b)=>b.price-a.price);
+  return list;
+}
+function renderGrid(){
+  const grid=document.getElementById('product-grid');
+  const titleEl=document.getElementById('sec-title');
+  const countEl=document.getElementById('sec-count');
+  grid.innerHTML='';
+  const list=getFiltered();
+  if(titleEl)titleEl.innerHTML=CAT_NAMES[activeCat]||'Search Results';
+  if(countEl)countEl.textContent=`Showing ${list.length} items`;
+  if(!list.length){
+    grid.innerHTML=`<div class="no-results"><div class="nr-icon">🔍</div><h3>No products found</h3><p>Try a different search or category.</p></div>`;
+    return;
+  }
+  list.forEach(p=>{
+    const qty=cart[p.id]||0;
+    const div=document.createElement('div');
+    div.className='p-card'+(qty>0?' in-cart':'');
+    div.id=`card-${p.id}`;
+    div.innerHTML=`
+      <div class="p-zone">${p.icon}<div class="p-in-badge">IN CART</div></div>
+      <div class="p-body">
+        <div class="p-meta"><span class="p-name">${p.name}</span><span class="p-cat-tag">${catLabel(p.cat)}</span></div>
+        <div class="p-price-row"><span class="p-price">${fmt(p.price)}</span><span class="p-unit">/ ${p.unit}</span></div>
+        <div class="p-actions">
+          ${qty>0?`<div class="qty-row"><button class="q-btn" onclick="chg(${p.id},-1)">−</button><span class="q-num">${qty}</span><button class="q-btn" onclick="chg(${p.id},1)">+</button></div>`:''}
+          <button class="add-btn${qty>0?' done':''}" onclick="add(${p.id})">${qty>0?'✅ Added':'+ Add to Cart'}</button>
+        </div>
+      </div>`;
+    grid.appendChild(div);
+  });
+  if(activeCat==='all'||activeCat==='custom'){
+    const cc=document.createElement('div');
+    cc.className='p-card custom-card';
+    cc.innerHTML=`
+      <div class="p-zone" style="font-size:36px;">✏️</div>
+      <div class="p-body">
+        <div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px;">Custom Item</div>
+        <p style="font-size:12px;color:var(--ash);margin-bottom:12px;">Request any product not listed</p>
+        <div class="ci-form-area">
+          <input type="text" id="ci-name" placeholder="Product name" style="margin-bottom:8px;">
+          <input type="number" id="ci-price" placeholder="Estimated price (TZS)">
+          <button class="ci-add-btn" style="margin-top:10px;" onclick="addCustom()">Add to Cart</button>
+        </div>
+      </div>`;
+    grid.appendChild(cc);
+  }
+}
+function updCard(id){
+  const qty=cart[id]||0;
+  const card=document.getElementById(`card-${id}`);
+  if(!card)return;
+  card.className='p-card'+(qty>0?' in-cart':'');
+  const actions=card.querySelector('.p-actions');
+  if(actions)actions.innerHTML=`${qty>0?`<div class="qty-row"><button class="q-btn" onclick="chg(${id},-1)">−</button><span class="q-num">${qty}</span><button class="q-btn" onclick="chg(${id},1)">+</button></div>`:''}
+    <button class="add-btn${qty>0?' done':''}" onclick="add(${id})">${qty>0?'✅ Added':'+ Add to Cart'}</button>`;
+}
+function add(id){cart[id]=(cart[id]||0)+1;updBadge();updCard(id);}
+function chg(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];updBadge();updCard(id);}
+function updBadge(){document.getElementById('cart-count').textContent=Object.values(cart).reduce((s,v)=>s+v,0);}
+let customId=1000;
+function addCustom(){
+  const n=document.getElementById('ci-name').value.trim();
+  const p=parseInt(document.getElementById('ci-price').value)||0;
+  if(!n){alert('Please enter a product name');return;}
+  const id=++customId;
+  PRODUCTS.push({id,name:n,price:p,unit:'PC',icon:'✏️',cat:'custom'});
+  cart[id]=1;
+  document.getElementById('ci-name').value='';
+  document.getElementById('ci-price').value='';
+  updBadge();renderGrid();
+}
+function openCart(){document.getElementById('cart-overlay').classList.add('open');renderCart();}
+function closeCart(){document.getElementById('cart-overlay').classList.remove('open');}
+function renderCart(){
+  const body=document.getElementById('cart-body');
+  const sc=document.getElementById('cart-summary-count');
+  const keys=Object.keys(cart).filter(k=>cart[k]>0);
+  const tot=Object.values(cart).reduce((s,v)=>s+v,0);
+  if(sc)sc.textContent=`${tot} item${tot===1?'':'s'}`;
+  if(!keys.length){body.innerHTML=`<div class="cart-empty"><div class="ce-icon">🛒</div><p>Your cart is empty.<br>Add products to continue.</p></div>`;return;}
+  let html='',total=0;
+  keys.forEach(k=>{
+    const p=PRODUCTS.find(x=>x.id==k);if(!p)return;
+    const qty=cart[k],sub=p.price*qty;total+=sub;
+    html+=`<div class="cart-item"><span class="ci-emoji">${p.icon}</span><div class="ci-info"><div class="ci-name">${p.name}</div><div class="ci-qty-label">Qty ${qty} · ${p.unit}</div></div><span class="ci-price">${fmt(sub)}</span><button class="ci-del" onclick="rmv(${p.id})">✕</button></div>`;
+  });
+  html+=`<div class="total-strip"><span>Order Total</span><span class="amount">${fmt(total)}</span></div>`;
+  body.innerHTML=html;
+}
+function rmv(id){delete cart[id];updBadge();updCard(id);renderCart();}
+function placeOrder(){
+  const name=(document.getElementById('f-name').value||'').trim();
+  const phone=(document.getElementById('f-phone').value||'').trim();
+  const addr=(document.getElementById('f-addr').value||'').trim();
+  const note=(document.getElementById('f-note').value||'').trim();
+  const pm=(document.getElementById('f-payment').value||'').trim();
+  if(!name){alert('Please enter your full name.');return;}
+  if(!phone){alert('Please enter your phone number.');return;}
+  if(!pm){alert('Please select a payment method.');return;}
+  if(!addr){alert('Please enter your delivery address.');return;}
+  const keys=Object.keys(cart).filter(k=>cart[k]>0);
+  if(!keys.length){alert('Your cart is empty!');return;}
+  let lines=[],total=0;
+  keys.forEach(k=>{const p=PRODUCTS.find(x=>x.id==k);if(!p)return;const qty=cart[k],sub=p.price*qty;total+=sub;lines.push(`${p.name} ×${qty} (${fmt(sub)})`);});
+  const data={timestamp:new Date().toLocaleString('en-TZ'),order_number:'ORD-'+orderNum,customer_name:name,phone,address:addr,note,payment_method:pm,items:lines.join(' | '),total};
+  document.getElementById('btn-text').style.display='none';
+  document.getElementById('btn-spin').style.display='inline-block';
+  document.getElementById('order-btn').disabled=true;
+  const URL='https://script.google.com/macros/s/AKfycbzlUOq7R2SgFDn72uYPqgcVlojC10zM7aJVGu1OmFOsrikeVXZyipJgWScEwPU5nWza5w/exec';
+  fetch(URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).catch(()=>{}).finally(()=>showSuccess(name,orderNum,total,pm,lines));
+}
+function buildWA(name,num,total,pm,lines){
+  const items=lines.map(l=>`  • ${l}`).join('\n');
+  const msg=`🛒 *NEW ORDER — Get It Fresh Groceries*\n━━━━━━━━━━━━━━━━━━━\n📋 Order: *ORD-${num}*\n👤 Name: ${name}\n💳 Payment: ${pm}\n━━━━━━━━━━━━━━━━━━━\n🧺 *Items:*\n${items}\n━━━━━━━━━━━━━━━━━━━\n💰 *Total: ${fmt(total)}*\n━━━━━━━━━━━━━━━━━━━\nPlease confirm this order. Thank you! 🙏`;
+  return 'https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
+}
+function showSuccess(name,num,total,pm,lines){
+  document.getElementById('btn-text').style.display='';
+  document.getElementById('btn-spin').style.display='none';
+  document.getElementById('order-btn').disabled=false;
+  document.getElementById('checkout-form').style.display='none';
+  document.getElementById('success-box').classList.add('show');
+  const waUrl=buildWA(name,num,total,pm,lines);
+  document.getElementById('success-msg').innerHTML=`Thank you, <strong>${name}</strong>!<br>Order <strong>ORD-${num}</strong> submitted ✅<br>Total: <strong>${fmt(total)}</strong> · Payment: <strong>${pm}</strong><br><span style="font-size:12px;color:var(--ash);">Tap below to send your order to us on WhatsApp for instant confirmation.</span><a href="${waUrl}" target="_blank" rel="noopener" class="wa-confirm-btn"><svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Send Order via WhatsApp</a><p class="wa-note">Opens WhatsApp with your order pre-filled. Just tap Send!</p>`;
+  cart={};orderNum=Math.floor(10000+Math.random()*90000);
+  updBadge();renderGrid();
+}
+// Header scroll effect
+window.addEventListener('scroll',()=>{
+  document.getElementById('site-header').classList.toggle('scrolled',window.scrollY>20);
+  document.getElementById('btt').classList.toggle('vis',window.scrollY>400);
+});
+// Cart overlay close on backdrop
+document.getElementById('cart-overlay').addEventListener('click',function(e){if(e.target===this)closeCart();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCart();});
+// Scroll reveal
+const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+// Init
+window.addEventListener('load',()=>{renderGrid();updBadge();});
+</script>
+</body>
+</html>
